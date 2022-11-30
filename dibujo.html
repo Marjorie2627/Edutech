@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dibujar texto en canvas</title>
+<style>
+canvas {
+border: 1px solid #000;
+}
+</style>
+<script>
+ window.onload = function() {
+ var canvas = document.getElementById("mi_canvas");
+ var context = canvas.getContext("2d");
+ context.font = "bold 32px Arial";
+ context.fillText("Hello World!", 50, 100);
+ };
+</script>
+</head>
+<body>
+ <canvas id="mi_canvas" width="300" height="200"></canvas>
+</body>
+</html>

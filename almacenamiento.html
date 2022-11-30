@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Almacenamiento de datos con almacenamiento local HTML5</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        // Comprobamos si existe el objeto localStorage
+        if(localStorage) {
+        $(document).ready(function() {
+        $(".save").click(function () {
+                        // Get input name
+                        var nombre = $("#nombre").val();
+                        // Store data
+                        localStorage.setItem("nombre", nombre);
+                        alert("Su nombre ha sido guardado.");
+                    });
+                    $(".access").click(function () {
+                        // Retrieve data
+                        alert("Hola; " + localStorage.getItem("nombre"));
+                    });
+                });
+            } else {
+                alert("Lo sentimos, su navegador no acepta almacenamiento local.");
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label>Nombre: <input type="text" id="nombre"></label>
+            <button type="button" class="save">Guardar Nombre</button>
+            <button type="button" class="access">Obtener Nombre</button>
+        </form>
+    </body>
+</html>
